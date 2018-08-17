@@ -26,6 +26,10 @@ $(document).ready(function() {
       }); // end each
       photoHTML += '</ul>';
       $('#photos').html(photoHTML);
+
+      //after the search enable the button
+      $searchField.prop('disabled',false);
+      $submitButton.prop('disabled',false).val('Search');
     }
     $.getJSON(flickerAPI, flickrOptions, displayPhotos);
 
