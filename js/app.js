@@ -4,6 +4,12 @@ $(document).ready(function() {
  $('form').submit(function (evt) {
     evt.preventDefault();
    var $searchField=$('#search');
+   var $submitButton=$('#submit');
+
+   //while searching 
+   $searchField.prop('disabled',true);
+   $submitButton.attr('disabled',true).val('Searching...');
+
     // the AJAX part
     var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
     var animal = $searchField.val();
